@@ -1,0 +1,33 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../../styles/theme'
+import HeroNFT from '../../components/hero_nft/HeroNFT';
+
+
+
+
+export default {
+    title: 'Organisms/HeroNFT',
+    component: HeroNFT,
+} as ComponentMeta<typeof HeroNFT>;
+
+const Template: ComponentStory<typeof HeroNFT> = (args) => <HeroNFT/>;
+
+export const Draft = Template.bind({});
+Draft.decorators = [
+    (Story) => 
+        <div 
+            style={{ 
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: "100%", 
+                // background: "#3F3F4A",
+                background: "#0F0F23"
+                }}>
+            <ThemeProvider theme={theme}>
+                <Story/>
+            </ThemeProvider>
+        </div>
+];
+
